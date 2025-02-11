@@ -3854,7 +3854,7 @@
           range.move('character', caretPos);
           range.select();
         } else {
-          elem.setSelectionRange(caretPos, caretPos);
+          if (['input', 'textarea'].indexOf(elem.tagName.toLowerCase()) !== -1) elem.setSelectionRange(caretPos, caretPos);
         }
       }
     } catch (ex) {
